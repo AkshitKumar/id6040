@@ -1,0 +1,1036 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Robotics Assignment 1
+\end_layout
+
+\begin_layout Author
+Akshit Kumar, EE14B127
+\end_layout
+
+\begin_layout Date
+4th October 2016
+\end_layout
+
+\begin_layout Section*
+Solution 1
+\end_layout
+
+\begin_layout Standard
+Suppose we are given two frames, denoted by frames 
+\begin_inset Formula $F_{0}$
+\end_inset
+
+and 
+\begin_inset Formula $F_{1}.$
+\end_inset
+
+ We can assume the two frames have two additional features, namely
+\end_layout
+
+\begin_layout Standard
+1.
+ The axis 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+is perpendicular to the axis 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2.
+ The axis 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+intersects the axis 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Under these conditions we claim that there exist unique numbers 
+\begin_inset Formula $a,d,\theta,\alpha$
+\end_inset
+
+ such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $A$
+\end_inset
+
+ = 
+\begin_inset Formula $R_{z,\theta}Trans_{z,d}Trans_{x,a}R_{x,\alpha}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the first condition is satisfied, then 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+is perpendicular to 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+and we have 
+\begin_inset Formula $x_{1}.z_{0}$
+\end_inset
+
+= 
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This implies 
+\begin_inset Formula $x_{1}^{T}.z_{0}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}r_{11} & r_{21} & r_{31}\end{bmatrix}.$
+\end_inset
+
+
+\begin_inset Formula $\begin{bmatrix}0\\
+0\\
+1
+\end{bmatrix}$
+\end_inset
+
+= 
+\begin_inset Formula $r_{31}$
+\end_inset
+
+ = 
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since each row and column of 
+\begin_inset Formula $R_{0}^{1}$
+\end_inset
+
+must have unit length, 
+\begin_inset Formula $r_{31}$
+\end_inset
+
+= 
+\begin_inset Formula $0$
+\end_inset
+
+, implies that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r_{11}^{2}+r_{21}^{2}$
+\end_inset
+
+= 
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r_{32}^{2}+r_{33}^{2}$
+\end_inset
+
+= 
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Hence there exists unique 
+\begin_inset Formula $\alpha,\theta$
+\end_inset
+
+ such that 
+\begin_inset Formula $(r_{11},r_{21})=(cos\theta,sin\theta)$
+\end_inset
+
+ & 
+\begin_inset Formula $(r_{33},r_{32})=(cos\alpha,sin\alpha)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Using the fact that 
+\begin_inset Formula $R_{0}^{1}$
+\end_inset
+
+ is a rotation matrix, it can be shown that remaining elements of 
+\begin_inset Formula $R_{0}^{1}$
+\end_inset
+
+will be trigonometric functions of 
+\begin_inset Formula $\alpha,\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Therefore we can obtain the 
+\begin_inset Formula $R_{0}^{1}$
+\end_inset
+
+rotation matrix as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R_{0}^{1}$
+\end_inset
+
+ = 
+\begin_inset Formula $\begin{bmatrix}cos\theta & -sin\theta cos\alpha & sin\theta cos\alpha\\
+sin\theta & cos\theta cos\alpha & -cos\theta sin\alpha\\
+0 & sin\alpha & cos\alpha
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the second condition is satisfied, then the origin of the two frames
+ can be related by a linear combination of the vectors 
+\begin_inset Formula $z_{0}$
+\end_inset
+
+and 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ Thus we obtain the following relationship
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{0}^{1}=P_{0}^{0}+dz_{0}^{0}+ax_{1}^{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{0}^{1}=\begin{bmatrix}0\\
+0\\
+0
+\end{bmatrix}+d\begin{bmatrix}0\\
+0\\
+1
+\end{bmatrix}+a\begin{bmatrix}cos\theta\\
+sin\theta\\
+0
+\end{bmatrix}=\begin{bmatrix}acos\theta\\
+asin\theta\\
+d
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combining the above results, we see that four parameters are sufficient
+ to specify any homogeneous transformation.
+ Therefore there exist unique DH parameters such that the homogeneous transforma
+tion can be expressed as a combination of 2 rotation and 2 translation matrices.
+ 
+\end_layout
+
+\begin_layout Section*
+Solution 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /Users/akshitkumar1/Desktop/dhparameter.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S.No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-90^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $90^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-90^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $d_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-90^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $90^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0^{o}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+i.
+ The table above contains the DH parameters of the manipulators.
+\end_layout
+
+\begin_layout Standard
+The transformation matrix is given as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{i-1}^{i}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}cos\theta_{i} & -sin\theta_{i}cos\alpha_{i} & sin\theta_{i}sin\alpha_{i} & a_{i}cos\theta_{i}\\
+sin\theta_{i} & cos\theta_{i}cos\alpha_{i} & -cos\theta_{i}sin\alpha_{i} & a_{i}sin\theta_{i}\\
+0 & sin\alpha_{i} & cos\alpha_{i} & d_{i}\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The individual trandformation matrices are as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{0}^{1}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}1 & 0 & 0 & 0\\
+0 & 0 & 1 & 0\\
+0 & -1 & 0 & d_{1}\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{1}^{2}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}0 & 0 & -1 & 0\\
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & d_{2}\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{2}^{3}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & d_{3}\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{3}^{4}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}cos\theta_{4} & 0 & sin\theta_{4} & 0\\
+sin\theta_{4} & 0 & -cos\theta_{4} & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{4}^{5}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}cos\theta_{5} & 0 & -sin\theta_{5} & 0\\
+sin\theta_{5} & 0 & cos\theta_{5} & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{5}^{6}$
+\end_inset
+
+= 
+\begin_inset Formula $\begin{bmatrix}cos\theta_{6} & 0 & -sin\theta_{6} & 0\\
+sin\theta_{6} & 0 & cos\theta_{6} & 0\\
+0 & 0 & 1 & 1\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ii.
+ 
+\begin_inset Formula $T_{0}^{5}=T_{0}^{1}.T_{1}^{2}.T_{2}^{3}.T_{3}^{4}.T_{4}^{5}=\begin{bmatrix}-sin\theta_{5} & 0 & -cos\theta_{5} & -d_{3}\\
+-sin\theta_{4}cos\theta_{5} & -cos\theta_{4} & sin\theta_{4}cos\theta_{5} & d_{2}\\
+-cos\theta_{4}cos\theta_{5} & sin\theta_{4} & cos\theta_{4}sin\theta_{5} & d_{1}\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{0}^{6}=T_{0}^{1}.T_{1}^{2}.T_{2}^{3}.T_{3}^{4}.T_{4}^{5}.T_{5}^{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{0}^{6}=$
+\end_inset
+
+
+\begin_inset Formula $\begin{bmatrix}-sin\theta_{5}cos\theta_{6} & sin\theta_{5}sin\theta_{6} & -cos\theta_{5} & -cos\theta_{5}-d{}_{3}\\
+-sin\theta_{4}cos\theta_{5}cos\theta_{6}-cos\theta_{4}sin\theta_{6} & sin\theta_{4}cos\theta_{5}sin\theta_{6}-cos\theta_{4}cos\theta_{6} & sin\theta_{4}sin\theta_{5} & sin\theta_{4}sin\theta_{5}+d_{2}\\
+-cos\theta_{4}cos\theta_{5}cos\theta_{6}+sin\theta_{4}sin\theta_{6} & cos\theta_{4}cos\theta_{5}sin\theta_{6}+sin\theta_{4}cos\theta_{6} & cos\theta_{4}sin\theta_{5} & cos\theta_{4}sin\theta_{5}+d_{1}\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+iii.
+ For 
+\begin_inset Formula $d_{1}=2,d_{2}=2,d_{3}=3,d_{6}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{4}=0,\theta_{5}=0,\theta_{6}=\pi$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T_{0}^{6}=T_{0}^{1}.T_{1}^{2}.T_{2}^{3}.T_{3}^{4}.T_{4}^{5}.T_{5}^{6}=$
+\end_inset
+
+
+\begin_inset Formula $\begin{bmatrix}0 & 0 & -1 & -4\\
+0 & 1 & 0 & 2\\
+1 & 0 & 0 & 2\\
+0 & 0 & 0 & 1
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Solution 3
+\end_layout
+
+\begin_layout Subsection*
+Python Program Source Code
+\end_layout
+
+\begin_layout Standard
+The Python Program is as follows:
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "calculateTransformation.py"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Input to the Program
+\end_layout
+
+\begin_layout Standard
+The input file to the program is provided as a CSV file.
+ Sample input file for this program is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "dh_parameters.csv"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Output of the Program
+\end_layout
+
+\begin_layout Standard
+The output of the program obtained is as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "output.txt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+References 
+\end_layout
+
+\begin_layout Standard
+While answering the assignment questions, the following references were
+ made use of:
+\end_layout
+
+\begin_layout Standard
+http://robotics.stackexchange.com/questions/7570/homogenous-transformation-matrix-
+for-dh-parameters
+\end_layout
+
+\begin_layout Standard
+http://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematic
+s.pdf
+\end_layout
+
+\end_body
+\end_document
